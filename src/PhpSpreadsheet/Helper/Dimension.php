@@ -74,16 +74,16 @@ class Dimension
 
     public function width(): float
     {
-        return (float) ($this->unit === null)
+        return (float) (($this->unit === null)
             ? $this->size
-            : round(Drawing::pixelsToCellDimension((int) $this->size, new Font(false)), 4);
+            : round(Drawing::pixelsToCellDimension((int) $this->size, new Font(false)), 4));
     }
 
     public function height(): float
     {
-        return (float) ($this->unit === null)
+        return (float) (($this->unit === null)
             ? $this->size
-            : $this->toUnit(self::UOM_POINTS);
+            : $this->toUnit(self::UOM_POINTS));
     }
 
     public function toUnit(string $unitOfMeasure): float
